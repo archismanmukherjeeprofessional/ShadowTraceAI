@@ -1,60 +1,50 @@
 # ============================================
-# BOB AI ASSISTANT - SECURITY IGNORE PATTERNS
+# IBM BOB 2.0 HACKATHON - SECURITY .GITIGNORE
 # ============================================
-# Prevents Bob from logging credentials in session history
-# DO NOT REMOVE OR MODIFY THESE PATTERNS
+# DO NOT REMOVE OR MODIFY SECURITY PATTERNS
 # ============================================
 
-# IBM Cloud API Keys
-*IBM_CLOUD_API_KEY*
-*ibm_cloud_api_key*
-*IBMCLOUD_API_KEY*
+# ============================================
+# AI ASSISTANT SESSION FILES (CRITICAL)
+# ============================================
+# NOTE: bob_sessions/ folder is REQUIRED for project submission
+# Live session files are excluded, but exported reports must be included
+.copilot/
+.cursor/
+.codeium/
+
+# ============================================
+# CREDENTIALS AND SECRETS (CRITICAL)
+# ============================================
+
+# Environment files
+.env
+.env.*
+!.env.example
+*.env
+env.local
+.env.local
+.env.*.local
+
+# IBM Cloud credentials
+ibmcloud-credentials.json
+ibm-credentials.env
+*-credentials.json
 *apikey*
 *api-key*
 *api_key*
 
-# Watson Service Credentials
-*WATSON_*_API_KEY*
-*watson_*_api_key*
-*WATSON_*_URL*
-*ASSISTANT_API_KEY*
-*DISCOVERY_API_KEY*
+# Configuration files with credentials
+config.json
+config.yaml
+config.yml
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+credentials.yaml
 
-# Generic Credentials
-*API_KEY*
-*api_key*
-*ACCESS_TOKEN*
-*access_token*
-*SECRET_KEY*
-*secret_key*
-*PASSWORD*
-*password*
-*SECRET*
-*secret*
-*CREDENTIAL*
-*credential*
-*PRIVATE_KEY*
-*private_key*
-*AUTH_TOKEN*
-*auth_token*
-*BEARER_TOKEN*
-*bearer_token*
-
-# Environment Files
-.env
-.env.*
-*.env
-env.local
-
-# Configuration Files
-*credentials.json
-*credentials.yaml
-*secrets.json
-*secrets.yaml
-*config.json
-*config.yaml
-
-# Private Keys
+# Private keys
 *.pem
 *.key
 *.p12
@@ -63,29 +53,68 @@ env.local
 *.crt
 id_rsa
 id_dsa
+*.ppk
 
-# Database Credentials
-*DATABASE_URL*
-*database_url*
-*DB_PASSWORD*
-*db_password*
-*CONNECTION_STRING*
-*connection_string*
+# Generic credential patterns
+*credentials*
+*secret*
+*password*
+*token*
 
-# Session Tokens
-*SESSION_SECRET*
-*session_secret*
-*JWT_SECRET*
-*jwt_secret*
+# Database credentials
+database.yml
+database.json
+db-config.*
 
-# Command Outputs
-*ibmcloud iam api-key-create*
-*ibmcloud login*
-*export *API_KEY*
-*export *PASSWORD*
-*echo $*API_KEY*
-*printenv*
+# ============================================
+# DEVELOPMENT FILES
+# ============================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Java
+*.class
+*.jar
+*.war
+target/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+*~
+.backup/
 
 # ============================================
 # DO NOT REMOVE ABOVE PATTERNS
+# Add project-specific patterns below
 # ============================================
